@@ -1,4 +1,4 @@
-package com.login;
+
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -18,7 +18,8 @@ public class Login extends HttpServlet {
 		if(username.equals("joe") && password.equals("t")){
 			response.sendRedirect("about.html");
 		}
-		else{
+		else
+                {
 			response.sendRedirect("log-in.html");
 		}
 	}
