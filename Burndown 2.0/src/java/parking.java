@@ -27,7 +27,6 @@ public class parking extends HttpServlet {
         {
             response.setContentType("text/html");
             PrintWriter out =response.getWriter();
-            ResourceBundle props = ResourceBundle.getBundle("jira");
             String mergeFiles="this is your parking number";
             out.println(mergeFiles);
             out.close();
