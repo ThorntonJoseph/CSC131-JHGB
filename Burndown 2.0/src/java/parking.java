@@ -25,15 +25,6 @@ public class parking extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
         {
-            response.setContentType("text/html");
-            PrintWriter out =response.getWriter();
-            String mergeFiles="this is your parking number";
-            out.println(mergeFiles);
-            out.close();
-         //Debug Statement
-            System.out.println(mergeFiles);
-        // *THIS IS THE WAY I AM SEND DATA TO JSP PAGE.*
-            request.setAttribute("todo", mergeFiles);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+          response.sendRedirect("parkingspot.html");
 	}
 }

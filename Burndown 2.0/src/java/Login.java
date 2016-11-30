@@ -1,5 +1,5 @@
-
-
+import java.sql.*;
+import rawjava.parkingselection;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,11 +16,22 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password"); 
 		
 		if(username.equals("joe") && password.equals("t")){
+                     parkingselection sparking=new parkingselection();
+                try{
+                Statement statement=sparking.con.createStatement();
+                ResultSet resultset=statement.executeQuery("CREATE TABLE PARKING_SPOTS");
+                }
+                
+                catch(Exception e){
+                        System.out.println("sqldatabase unreachable");
+                }
 			response.sendRedirect("Parking-selection.html");
 		}
 		else
                 {
 			response.sendRedirect("log-in.html");
 		}
+               
+                
 	}
 }
