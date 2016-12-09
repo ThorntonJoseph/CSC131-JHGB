@@ -1,0 +1,56 @@
+<manifest alg="2" build="2015.2.1.352" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="burndown.com" resolutions="1x" timestamp="1477153978430">
+  <folder name="css">
+    <file name="site_global.css" crc="3916556066"/>
+    <file name="master_a-master.css" crc="3998733749" ref="index:user-reg:customer-home:customer-reg:log-in:user-home:about"/>
+    <file name="index.css" crc="3835816192" ref="index"/>
+    <file name="user-reg.css" crc="284003538" ref="user-reg"/>
+    <file name="customer-home.css" crc="3987159924" ref="customer-home"/>
+    <file name="customer-reg.css" crc="3790107760" ref="customer-reg"/>
+    <file name="log-in.css" crc="224248841" ref="log-in"/>
+    <file name="user-home.css" crc="3830923974" ref="user-home"/>
+    <file name="about.css" crc="4155595674" ref="about"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="169078940" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="museutils.js" crc="3851988764" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="whatinput.js" crc="86476730" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="museconfig.js" crc="4242129463" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="jquery.musemenu.js" crc="4150485998" ref="index:log-in:about"/>
+    <file name="jquery.watch.js" crc="3842844514" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="require.js" crc="4108833657" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="pie.js" crc="3831537696" ref="user-home:customer-home:log-in:customer-reg:user-reg"/>
+    <file name="webpro.js" crc="4067903014" ref="user-home:customer-home:customer-reg:user-reg"/>
+    <file name="musewpdisclosure.js" crc="338211507" ref="user-home:customer-home"/>
+    <file name="form_check.php" crc="121412709" ref="customer-reg"/>
+    <file name="form_throttle.php" crc="4268640971" ref="customer-reg"/>
+    <file name="form_process.php" crc="444429785" ref="customer-reg"/>
+    <file name="form-u827.php" crc="3958737648" ref="customer-reg"/>
+    <file name="form-u1063.php" crc="159965348" ref="user-reg"/>
+  </folder>
+  <folder name="images">
+    <file name="burndown-logo.png" crc="64910648" seo="true" ref="index:user-home:customer-home:log-in:about:customer-reg:user-reg"/>
+    <file name="tennis-crop-u1705.jpg" crc="107147401" ref="index"/>
+    <file name="burndown-dark.png" crc="3936680439" seo="true" ref="index"/>
+    <file name="comp-gray.png" crc="4000470877" seo="true" ref="index"/>
+    <file name="calendar-gray.png" crc="420288235" seo="true" ref="index"/>
+    <file name="car-gray168x110.png" crc="444942385" seo="true" ref="index"/>
+    <file name="cactus200x133.jpg" crc="4183362648" seo="true" ref="user-home"/>
+    <file name="trees200x133.jpg" crc="4283677640" seo="true" ref="user-home"/>
+    <file name="u863-17.png" crc="183027231" ref="customer-reg"/>
+    <file name="u863-17-r.png" crc="367522293" ref="customer-reg"/>
+    <file name="u863-17-m.png" crc="3835867160" ref="customer-reg"/>
+    <file name="u863-17-fs.png" crc="368564474" ref="customer-reg"/>
+    <file name="u1072-17.png" crc="183027231" ref="user-reg"/>
+    <file name="u1072-17-r.png" crc="367522293" ref="user-reg"/>
+    <file name="u1072-17-m.png" crc="3835867160" ref="user-reg"/>
+    <file name="u1072-17-fs.png" crc="368564474" ref="user-reg"/>
+  </folder>
+  <file name="index.html" crc="4207435800" seo="true" mt="1476408634937" redirect="true"/>
+  <file name="user-home.html" crc="4260910960" seo="true" mt="1476204835476" redirect="true"/>
+  <file name="customer-home.html" crc="4172204713" seo="true" mt="1476224679586" redirect="true"/>
+  <file name="log-in.html" crc="3805757555" seo="true" mt="1476204730763" redirect="true"/>
+  <file name="about.html" crc="3809964355" seo="true" mt="1476204730743" redirect="true"/>
+  <file name="customer-reg.html" crc="3848377900" seo="true" mt="1476224950081" redirect="true"/>
+  <file name="user-reg.html" crc="374999181" seo="true" mt="1476224898063" redirect="true"/>
+</manifest>
