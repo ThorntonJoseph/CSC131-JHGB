@@ -18,18 +18,18 @@ public class Login extends HttpServlet {
 		parkingselection sparking=new parkingselection();  
                 try{
                     Statement statement=sparking.con.createStatement();
-                    ResultSet resultset=statement.executeQuery("SELECT UserName,Password FROM USERS"
-                            + "WHERE UserName="+username);
-                    if(password.equals(resultset.getString("Password"))){
-                        response.sendRedirect("Parking-selection.html");
+                    ResultSet resultset=statement.executeQuery("SELECT UserName,Password FROM USERS "
+                            + "WHERE UserName='"+username+"';");
+                    if(resultset.next()){
+                        if(password.equals(resultset.getString("Password")))
+                            response.sendRedirect("Parking-selection.html");
+                        else
+                           response.sendRedirect("log-in.html");
+                    }
+                    sparking.con.close();
                 }
-                     else
-                    response.sendRedirect("log-in.html");
+                catch(Exception e){     
                 }
-                catch(Exception e){
-                        
-                }
-			response.sendRedirect("log-in.html");
 		}
 		
                
