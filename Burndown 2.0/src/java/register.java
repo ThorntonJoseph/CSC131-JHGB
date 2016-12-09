@@ -33,10 +33,10 @@ public class register extends HttpServlet{
                             response.sendRedirect("register.html");
                     }
                     else{
-                        statement.executeUpdate("INSERT INTO USERS (ID,UserName,licenseplate,Fname,Password,EMAIL,Lname) "
-                                + "VALUES "+ "("+0+",'"+username+"','"+License+"','"
+                        statement.executeUpdate("INSERT INTO USERS (UserName,licenseplate,Fname,Password,EMAIL,Lname) "
+                                + "VALUES "+ "('"+username+"','"+License+"','"
                                 +first_name+"','"+password+"','"+email+"','"+last_name+"');");
-                        response.sendRedirect("Parking-selection.html");
+                        response.sendRedirect("log-in.html");
                     }
                     sparking.con.close();
                 }
