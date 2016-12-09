@@ -15,24 +15,24 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password"); 
-		
-		if(username.equals("joe") && password.equals("t")){
-                     parkingselection sparking=new parkingselection();
+		parkingselection sparking=new parkingselection();  
                 try{
-                Statement statement=sparking.con.createStatement();
-                ResultSet resultset=statement.executeQuery("CREATE TABLE PARKING_SPOTS");
+                    Statement statement=sparking.con.createStatement();
+                    ResultSet resultset=statement.executeQuery("SELECT UserName,Password FROM USERS"
+                            + "WHERE UserName="+username);
+                    if(password.equals(resultset.getString("Password"))){
+                        response.sendRedirect("Parking-selection.html");
                 }
-                
+                     else
+                    response.sendRedirect("log-in.html");
+                }
                 catch(Exception e){
-                        System.out.println("sqldatabase unreachable");
+                        
                 }
-			response.sendRedirect("Parking-selection.html");
-		}
-		else
-                {
 			response.sendRedirect("log-in.html");
 		}
+		
                
                
 	}
-}
+
