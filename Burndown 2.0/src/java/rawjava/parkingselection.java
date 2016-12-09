@@ -27,6 +27,7 @@ public class parkingselection
             String connectionUrl = "jdbc:mysql://athena.ecs.csus.edu/jhgb?" + 
                                    "user=jhgb_user&password=almoststarted";
              con = DriverManager.getConnection(connectionUrl);
+             System.out.println("your vpn is working and database =1");
             
         } catch (SQLException e) {
             System.out.println("SQL Exception: "+ e.toString());
