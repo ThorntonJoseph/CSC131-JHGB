@@ -12,10 +12,10 @@ import java.util.*;
  *
  * @author Joe
  */
-public class parkingselection 
+public class getsql 
 {
     public Connection con;
-    public parkingselection(){
+    public getsql(){
         PriorityQueue parkingspots;
         con=testmysql();
                 }

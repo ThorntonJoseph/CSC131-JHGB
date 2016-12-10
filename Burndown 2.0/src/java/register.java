@@ -5,7 +5,7 @@
  */
 
 import java.sql.*;
-import rawjava.parkingselection;
+import rawjava.getsql;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
-import rawjava.parkingselection;
+import rawjava.getsql;
 
 @WebServlet("/register")
 public class register extends HttpServlet{
@@ -24,7 +24,7 @@ public class register extends HttpServlet{
                 String first_name= request.getParameter("First Name");
                 String last_name= request.getParameter("Last Name");
                 String License= request.getParameter("License");
-		parkingselection sparking=new parkingselection(); 
+		getsql sparking=new getsql(); 
                 try{
                     Statement statement=sparking.con.createStatement();
                     ResultSet resultset=statement.executeQuery("SELECT UserName FROM USERS WHERE UserName='"+username+"';");
@@ -33,9 +33,9 @@ public class register extends HttpServlet{
                             response.sendRedirect("register.html");
                     }
                     else{
-                        statement.executeUpdate("INSERT INTO USERS (UserName,licenseplate,Fname,Password,EMAIL,Lname) "
+                        statement.executeUpdate("INSERT INTO USERS (UserName,licenseplate,Fname,Password,EMAIL,Lname,SP_ID) "
                                 + "VALUES "+ "('"+username+"','"+License+"','"
-                                +first_name+"','"+password+"','"+email+"','"+last_name+"');");
+                                +first_name+"','"+password+"','"+email+"','"+last_name+"',"+0+");");
                         response.sendRedirect("log-in.html");
                     }
                     sparking.con.close();
