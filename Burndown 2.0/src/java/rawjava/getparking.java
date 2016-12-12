@@ -22,23 +22,24 @@ import rawjava.getsql;
  */
 public class getparking {
     public static int takespot(){
-        int i=1001;
+        int i=1000;
         int parking_id;
     getsql sparking=new getsql();
         try{
             Statement prep=sparking.con.createStatement();
-            ResultSet rs=prep.executeQuery("SELECT FROM ParkingSpots WHERE SP_ID="+1000+" AND Status="+true);
-            while (!rs.next()&&i<400){
-            rs=prep.executeQuery("SELECT FROM ParkingSpots WHERE SP_ID="+i+" AND Status="+true);
+            ResultSet rs=prep.executeQuery("SELECT * FROM ParkingSpots WHERE SP_ID="+1000+" AND Status="+true);
+            while (!rs.next()&&i<1400){
+            i++;
+            rs=prep.executeQuery("SELECT * FROM ParkingSpots WHERE SP_ID="+i+" AND Status="+true);
             }
-            if(i==400)
+            if(i==1400)
                 return 0;
-            parking_id=rs.getInt("SP_ID");
-            prep.executeUpdate("Update ParkingSpots SET Status="+false+"WHERE SP_ID="+parking_id);
+            parking_id=i;
+            prep.executeUpdate("Update ParkingSpots SET Status="+false+",Time_in=CURRENT_TIMESTAMP WHERE SP_ID="+parking_id);
             return parking_id;
         }
         catch(Exception e){
-    
+            JOptionPane.showMessageDialog(null, e);
         }
         return 0;
     }
@@ -46,7 +47,7 @@ public class getparking {
         getsql sparking=new getsql();
         try{
             Statement prep=sparking.con.createStatement();
-            prep.executeUpdate("Update ParkingSpots SET Status="+true+"WHERE SP_ID="+parking_id);
+            prep.executeUpdate("Update ParkingSpots SET Status="+true+" WHERE SP_ID="+parking_id);
         }
         catch(Exception e){
             return 0;

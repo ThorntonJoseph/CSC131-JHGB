@@ -17,32 +17,38 @@ public class Login extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-                response.setContentType("text/html");
-                PrintWriter out=response.getWriter(); 
-                request.getRequestDispatcher("Parking-selection.html").include(request, response);  
+		String password = request.getParameter("password");  
 		getsql sparking=new getsql();  
+                response.setContentType("text/html");
+                request.getRequestDispatcher("Parking-selection.html").include(request, response);  
                 try{
                     Statement statement=sparking.con.createStatement();
                     ResultSet resultset=statement.executeQuery("SELECT UserName,Fname,Password FROM USERS "
                             + "WHERE UserName='"+username+"';");
+       
                     if(resultset.next()){
-                        if(password.equals(resultset.getString("Password"))){
-                            out.print("Login Success"+resultset.getString("Fname"));
-                            HttpSession session = request.getSession();  
+                       if(password.equals(resultset.getString("Password"))){
+                           HttpSession session = request.getSession();
+                            session.setAttribute("username", username);
+                            String ses_id= session.getId();
+                            statement.executeUpdate("UPDATE USERS SET Ses_ID='"+ses_id+"' WHERE UserName='"+username+"';"); 
                         }
-                        else
+                       else{
                            JOptionPane.showMessageDialog(null, "incorrect password ");
                            response.sendRedirect("log-in.html");
+                       }
                     }
-                    else
+                    else{
                         JOptionPane.showMessageDialog(null, "incorrect username ");
-                        request.getRequestDispatcher("Parking-selection.html").include(request, response);
+                        response.sendRedirect("log-in.html");
+                    }
                     sparking.con.close();
-                    out.close();
+                   
                 }
                 catch(Exception e){     
+                   JOptionPane.showMessageDialog(null, e);
                 }
+                
 		}
 		
                
