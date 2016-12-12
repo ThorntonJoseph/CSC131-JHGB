@@ -19,8 +19,7 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");  
 		getsql sparking=new getsql();  
-                response.setContentType("text/html");
-                request.getRequestDispatcher("Parking-selection.html").include(request, response);  
+                response.setContentType("text/html"); 
                 try{
                     Statement statement=sparking.con.createStatement();
                     ResultSet resultset=statement.executeQuery("SELECT UserName,Fname,Password FROM USERS "
@@ -28,10 +27,11 @@ public class Login extends HttpServlet {
        
                     if(resultset.next()){
                        if(password.equals(resultset.getString("Password"))){
-                           HttpSession session = request.getSession();
+                           HttpSession session = request.getSession(true);
                             session.setAttribute("username", username);
                             String ses_id= session.getId();
                             statement.executeUpdate("UPDATE USERS SET Ses_ID='"+ses_id+"' WHERE UserName='"+username+"';"); 
+                            request.getRequestDispatcher("profile").forward(request, response);
                         }
                        else{
                            JOptionPane.showMessageDialog(null, "incorrect password ");
@@ -49,9 +49,6 @@ public class Login extends HttpServlet {
                    JOptionPane.showMessageDialog(null, e);
                 }
                 
-		}
-		
-               
-               
+            }    
 	}
 

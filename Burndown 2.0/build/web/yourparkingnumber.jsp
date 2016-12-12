@@ -60,7 +60,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
           <div class="rounded-corners clearfix colelem" id="u728"><!-- group -->
                 <div class="clearfix grpelem" id="u713-4"><!-- content -->
-                    <%= request.getAttribute("id") %>
+                    <%= request.getSession(false).getAttribute("id") %>
                 </div>
           </div>
         <form action ="returnparking">

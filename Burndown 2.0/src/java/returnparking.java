@@ -39,7 +39,7 @@ public class returnparking extends HttpServlet {
                     getparking.returnspot(spot_id);
                     statement.executeUpdate("UPDATE USERS SET SP_ID="+0+" WHERE UserName='"+name.getAttribute("username")+"';"); 
                     statement.executeUpdate("UPDATE ParkingSpots SET Time_out=now() WHERE SP_ID="+spot_id+";"); 
-                    response.sendRedirect("log-in.html");
+                    response.sendRedirect("Parking-selection.html");
 	}
            catch(Exception e){
                JOptionPane.showMessageDialog(null, e);
