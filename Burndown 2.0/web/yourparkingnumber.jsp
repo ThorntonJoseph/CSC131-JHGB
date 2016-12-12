@@ -45,7 +45,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <a class="nonblock nontext MenuItem MenuItemWithSubMenu clearfix colelem" id="u648" href="index.html"><!-- horizontal box --><div class="MenuItemLabel NoWrap clearfix grpelem" id="u649-4"><!-- content --><p>&nbsp;HOME</p></div></a>
        </div>
        <div class="MenuItemContainer clearfix grpelem" id="u652"><!-- vertical box -->
-        <a class="nonblock nontext MenuItem MenuItemWithSubMenu clearfix colelem" id="u653" href="logout"><!-- horizontal box --><div class="MenuItemLabel NoWrap clearfix grpelem" id="u654-4"><!-- content --><p>LOG OUT</p></div></a>
+        <a class="nonblock nontext MenuItem MenuItemWithSubMenu clearfix colelem" id="u653" href="profile"><!-- horizontal box --><div class="MenuItemLabel NoWrap clearfix grpelem" id="u654-4"><!-- content --><p>PARKING</p></div></a>
        </div>
        <div class="MenuItemContainer clearfix grpelem" id="u659"><!-- vertical box -->
         <a class="nonblock nontext MenuItem MenuItemWithSubMenu MuseMenuActive clearfix colelem" id="u660" href="log-in.html"><!-- horizontal box --><div class="MenuItemLabel NoWrap clearfix grpelem" id="u663-4"><!-- content --><p>LOG IN</p></div></a>
@@ -63,7 +63,18 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
                     <%= request.getAttribute("id") %>
                 </div>
           </div>
+        <form action ="returnparking">
+          <div class="rounded-corners clearfix colelem" id="u728"><!-- group -->
+                <div class="clearfix grpelem" id="u713-4"><!-- content -->
+                    <input class="clearfix grpelem" id="u713-4" type = "submit" value = "Leave spot">
+                </div>
+          </div>
           
+	</form>
+          <div class="clearfix colelem" id="u734-4"><!-- content -->
+           <p><a class="clearfix colelem" id="u713-4" href="logout">LOGOUT</a></p>
+            </div> 
+         
    </div>
    <div class="verticalspacer" data-offset-top="430" data-content-above-spacer="430" data-content-below-spacer="187"></div>
    <div class="browser_width colelem" id="u219-bw">

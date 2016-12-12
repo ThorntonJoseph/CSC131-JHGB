@@ -22,19 +22,16 @@ public class logout extends HttpServlet {
                 Statement statement=sparking.con.createStatement();
                 HttpSession session=request.getSession(false); 
                 if(session!=null){
-                session.invalidate();  
                 statement.executeUpdate("UPDATE USERS SET Ses_ID="+null+" WHERE UserName='"+session.getAttribute("username")+"';");
-                JOptionPane.showMessageDialog(null, "logout successfull"); 
-                }
+                JOptionPane.showMessageDialog(null, "logout success");
+                session.invalidate();  
+                
+                } 
                 else
                  JOptionPane.showMessageDialog(null, "no session found");  
                 }
                 catch(Exception e){   
-                    
-                }
-		
-            
-            
-                
+                    JOptionPane.showMessageDialog(null, "no session found");
+                }     
     }  
 }  

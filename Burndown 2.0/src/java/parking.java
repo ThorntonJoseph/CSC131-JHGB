@@ -37,7 +37,6 @@ public class parking extends HttpServlet {
                     HttpSession name=request.getSession(false);
                     statement.executeUpdate("UPDATE USERS SET SP_ID="+spot+" WHERE UserName='"+name.getAttribute("username")+"'"); 
                     request.setAttribute("id", spot);
-                    JOptionPane.showMessageDialog(null, spot);
                     request.getRequestDispatcher("yourparkingnumber.jsp").forward(request, response);
                    
 	}
